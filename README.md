@@ -28,7 +28,7 @@
 - [❓ FAQ (OPTIONAL)](#faq)
 - [📝 License](#license)
 
-# 📖 [Portfolio] <a name="about-project"></a>
+# 📖 [Producer Web App] <a name="about-project"></a>
 
 **Producer Web App** is a project for a company that requires a company website where it can login to manage its data, show information about the company and, also to showcase its past, current and future projects, sell tickets, show availability in events, with more function to be added.
 
