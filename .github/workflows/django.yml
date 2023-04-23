@@ -20,10 +20,8 @@ jobs:
         cache: 'pip'
     - name: Install Dependencies
       run: |
-        cd producerApp
         python -m pip install --upgrade pip
         pip install -r requirements.txt
     - name: Run Tests
       run: |
-        cd producerApp
         python manage.py test
