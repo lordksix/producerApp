@@ -46,10 +46,14 @@
     <li><a href="https://www.ecma-international.org/publications-and-standards/standards/ecma-262/">JavaScript</a></li>
     <li><a href="#">Python</a></li>
   </ul>
+</details>
+<details>
   <summary>Framework</summary>
   <ul>
     <li><a href="#">Django</a></li>
   </ul>
+</details>
+<details>
   <summary>Database</summary>
   <ul>
     <li><a href="#">DB SQlite3</a></li>
