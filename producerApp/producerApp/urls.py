@@ -25,6 +25,7 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('home/', include('home.urls')),
+    path('tickets/', include('tickets.urls')),
     path('', RedirectView.as_view(url='home/')),
 ]
 #for development
