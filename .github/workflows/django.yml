@@ -25,6 +25,7 @@ jobs:
       run: |
         cd producerApp
         python -m pip install --upgrade pip
+        cache: 'pip'
         pip install -r requirements.txt
     - name: Run Tests
       run: |
