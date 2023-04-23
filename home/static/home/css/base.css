@@ -223,3 +223,79 @@ header {
 .menu_popup #close_menu {
   align-self: flex-end;
 }
+
+
+
+@media only screen and (min-width: 768px) {
+  /* **** Header section **** */
+
+  .social-media {
+    display: flex;
+    height: 30px;
+    background-color: #3e3e3e;
+    padding-inline: 13.2vw;
+    justify-content: flex-end;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .social-media img {
+    height: 18px;
+    width: auto;
+  }
+
+  .social-media a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 12px;
+  }
+
+  .nav-header {
+    position: static;
+    justify-content: space-between;
+    padding-inline: 0;
+    max-width: none;
+    width: 70%;
+    margin-inline: auto;
+  }
+
+  .nav-menu {
+    position: static;
+  }
+
+  .menu {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    padding: 0;
+    gap: clamp(0.65vw, (100vw - 900px) * 1000, 32px);
+  }
+
+  .menu a {
+    color: var(--font-3);
+  }
+
+  .menu_hamburger {
+    display: none;
+  }
+
+  #close_menu {
+    display: none;
+  }
+
+  .menu li:hover {
+    transform: scale(1.3);
+    color: var(--font-1);
+    text-shadow: 0.5px 0.5px var(--font-1);
+    transition-property: transform, color, text-shadow;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in-out;
+  }
+
+  .square {
+    width: 123px;
+    height: 48px;
+    padding-inline: 0;
+  }
+}
