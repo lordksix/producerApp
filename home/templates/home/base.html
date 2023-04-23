@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" >
+    <meta name="lordksix-code" content="https://github.com/lordksix/">
+    <meta name="lordksix" content="Welcome!">
+    <title>{% block title %}{% endblock %}</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/cocogoose" rel="stylesheet">
+    {% load static %}<link rel="stylesheet" type="text/css" href="{% static 'home/css/base.css' %}"/>
+    <script type="text/javascript" src="{% static 'home/js/main.js'%}" type="module" defer></script>
+    {% load static %} <link rel="shortcut icon" href="{% static 'general/img/favicon.ico' %}" type="image/x-icon">
+    {% block meta %}{% endblock %}
+    {% block extra_head %}{% endblock %}
+</head>
+ 
+<body>   
+
+{% block header %}{% endblock %}  
+{% block navbar %}{% endblock %}
+{% block body %}{% endblock %}
+
+
+{% block footer %}{% endblock %}
+
+
+
+    
+</body>
+</html>
