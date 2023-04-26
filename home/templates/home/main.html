@@ -3,11 +3,30 @@
     Welcome to EPA {{ settings.APP_NAME }}
 {% endblock %}
 {% block extra_head %}
+{% load static %}<link rel="stylesheet" type="text/css" href="{% static 'home/css/main.css' %}"/>
 {% endblock %}
 {% block content %}
+<main class="section modal-bg" id="about">
+  <h1>Lorem ipsum dolor sit amet</h1>
+  <div class="logo">
+    <a href="{% url 'home:home' %}" class="logo"><span class="square big">My Logo</span><!-- {% load static %}<img src="{% static 'general/img/IMG-20230423-WA0032.jpg'%}"" alt="Escenario Productora Artistica"> --></a>
+  </div>
+  <div class="descrip">
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum minus id dignissimos architecto quisquam quos, incidunt totam adipisci distinctio. <span>Nihil, quasi? Molestias alias doloribus at quos architecto dolor nihil voluptatum?</span></p>
+  </div>
+</main>
+<section class="section modal-bg" id="events">
+  <h1>Los eventos de la Lorem ipsumboo</h1>
+  <div class="events-grid">
+    {% load static %}<img class="event events-grid-col-2 events-grid-row-2" src="{% static 'general/img/IMG-20230423-WA0032.jpg'%}"" alt="Escenario Productora Artistica">
+    {% load static %}<img src="{% static 'general/img/IMG-20230423-WA0032.jpg'%}"" alt="Escenario Productora Artistica">
+    {% load static %}<img src="{% static 'general/img/IMG-20230423-WA0032.jpg'%}"" alt="Escenario Productora Artistica">
+    {% load static %}<img src="{% static 'general/img/IMG-20230423-WA0032.jpg'%}"" alt="Escenario Productora Artistica">
+    {% load static %}<img src="{% static 'general/img/IMG-20230423-WA0032.jpg'%}"" alt="Escenario Productora Artistica">
+  </div>
+  <button class="Join-more">Póximos eventos</button>
+</section>
 
-    <p>
-    Hello world.
-    </p>
+
 {% endblock %}
 
