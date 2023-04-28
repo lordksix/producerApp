@@ -3,9 +3,10 @@ const createButton = (func, classes, ariaLabel, textContent = null, href = null,
   span.ariaLabel = ariaLabel;
   const button = document.createElement('button');
   button.type = func;
-  button.classList.add(`${classes}`);
-  button.setAttribute(`data-${data}`, index);
-  button.textContent = textContent;
+  if((typeof classes) === 'object') classes.forEach((class0) => button.classList.add(`${class0}`));
+  else if(classes) button.classList.add(`${classes}`);
+  if (data) button.setAttribute(`data-${data}`, index);
+  if (textContent) button.textContent = textContent;
   if (innerChild) button.appendChild(innerChild);
   if (href) button.addEventListener('click', () => window.location.href = href);
   span.appendChild(button);
