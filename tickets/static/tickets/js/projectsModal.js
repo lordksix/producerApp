@@ -66,9 +66,9 @@ const works = [
   },
 ];
 
-function projectModal(e, sectionTag) {
+const eventGenerator = (e, sectionTag) => {
   const docFragment = document.createDocumentFragment();
-  const workCardInf = works[parseInt(e.target.dataset.workbtn, 10)];
+  const workCardInf = works[parseInt(e.target.dataset.eventID, 10)];
 
   const projectOverlay = document.createElement('div');
   projectOverlay.classList.add('project-overlay-wrapper');
