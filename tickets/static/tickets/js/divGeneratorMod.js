@@ -1,4 +1,4 @@
-const createDiv = (classes, data = null, index = null, innerChild = null) => {
+const createDiv = (classes, innerChild = null, data = null, index = null) => {
   const div = document.createElement('div');
   if((typeof classes) === 'object') classes.forEach((class0) => div.classList.add(`${class0}`));
   else if(classes) div.classList.add(`${classes}`);

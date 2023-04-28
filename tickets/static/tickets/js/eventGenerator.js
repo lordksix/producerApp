@@ -1,74 +1,12 @@
-const btnLive = 'Contact a sales rep';
-const btnSource = 'Buy Tickets';
-const gitIcon = '../../general/img/source-github-btn.svg';
-const buyIcon = '../../general/img/source-live-btn.svg'
-
-const works = [
-  {
-    name: 'Event Name 1',
-    cat: ['Teatro', 'Musical', 2023],
-    description:
-      `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it 1960s. Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-      Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it 1960s with the releorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum han printer took a galley of type and scrambled it 1960s with the releawn printer took a galley of type and scrambled it 1960s.`,
-    tags: ['Teatro', 'Musical', 'JavaScript'],
-    snapshot: '../../general/img/leaves01.jpg',
-    connectionsBtn: [gitIcon, buyIcon],
-    connectionstext: [btnLive, btnSource],
-    connectionsURL: ['https://lordksix.github.io/portafolio-app/', 'https://github.com/lordksix/portafolio-app'],
-  },
-  {
-    name: 'Event Name 2',
-    cat: ['Teatro', 'Drama', 2023],
-    description:
-    `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it 1960s. Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it 1960s with the releorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum han printer took a galley of type and scrambled it 1960s with the releawn printer took a galley of type and scrambled it 1960s.`,
-    tags: ['HTML', 'CSS', 'JavaScript'],
-    snapshot: '../../general/img/leaves02.jpg',
-    connectionsBtn: [gitIcon, buyIcon],
-    connectionstext: [btnLive, btnSource],
-    connectionsURL: ['https://lordksix.github.io/portafolio-app/', 'https://github.com/lordksix/portafolio-app'],
-  },
-  {
-    name: 'Event Name 3',
-    cat: ['Concierto', 'Rock', 2023],
-    description:
-    `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it 1960s. Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it 1960s with the releorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum han printer took a galley of type and scrambled it 1960s with the releawn printer took a galley of type and scrambled it 1960s.`,
-    tags: ['HTML', 'CSS', 'JavaScript'],
-    snapshot: '../../general/img/leaves03.jpg',
-    connectionsBtn: [gitIcon, buyIcon],
-    connectionstext: [btnLive, btnSource],
-    connectionsURL: ['https://lordksix.github.io/portafolio-app/', 'https://github.com/lordksix/portafolio-app'],
-  },
-  {
-    name: 'Event Name 4',
-    cat: ['Concierto', 'Internacional', 2024],
-    description:
-    `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it 1960s. Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it 1960s with the releorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum han printer took a galley of type and scrambled it 1960s with the releawn printer took a galley of type and scrambled it 1960s.`,
-    tags: ['HTML', 'CSS', 'Ruby on Rails', 'JavaScript'],
-    snapshot: '../../general/img/leaves04.jpg',
-    connectionsBtn: [gitIcon, buyIcon],
-    connectionstext: [btnLive, btnSource],
-    connectionsURL: ['https://lordksix.github.io/portafolio-app/', 'https://github.com/lordksix/portafolio-app'],
-  },
-  {
-    name: 'Event Name 5',
-    cat: ['Teatro', 'Musical', 2024],
-    description:
-    `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it 1960s. Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it 1960s with the releorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum han printer took a galley of type and scrambled it 1960s with the releawn printer took a galley of type and scrambled it 1960s.`,
-    tags: ['HTML', 'CSS', 'Ruby on Rails', 'JavaScript'],
-    snapshot: '../../general/img/leaves05.jpg',
-    connectionsBtn: [gitIcon, buyIcon],
-    connectionstext: [btnLive, btnSource],
-    connectionsURL: ['https://lordksix.github.io/portafolio-app/', 'https://github.com/lordksix/portafolio-app'],
-  },
-];
+import { createP } from './pGeneratorMod';
+import { createDiv } from './divGeneratorMod';
+import { createImg } from './imgGeneratorMod';
+import { createButton } from './buttonGeneratorMod';
+import { works } from './simulateDataBase';
 
 const eventGenerator = (e, sectionTag) => {
   const docFragment = document.createDocumentFragment();
-  const workCardInf = works[parseInt(e.target.dataset.eventID, 10)];
+  const posEvent = works[parseInt(e.target.dataset.eventID, 10)];
 
   const projectOverlay = document.createElement('div');
   projectOverlay.classList.add('project-overlay-wrapper');
@@ -164,7 +102,18 @@ const eventGenerator = (e, sectionTag) => {
   closeBtn.addEventListener('click', () => sectionTag.removeChild(projectOverlay));
 }
 
-function renderworks() {
+const renderworks = (e, sectionTag) => {
+  const posEvent = works[parseInt(e.target.dataset.eventID, 10)];
+  const docFragDiv = document.createDocumentFragment();
+  const docFragCard = document.createDocumentFragment();
+
+  const divEvent = createDiv('event-post');
+
+  const imgEvent = createImg('event-post-img', posEvent.snapshot, `${posEvent.name} Project, ${posEvent.cat[2]}`);
+  docFragSection.appendChild(imgEvent);
+
+  const divEventCard = createDiv('event-post-card');
+
   const docFragmentSd = document.createDocumentFragment();
   const docFragment = document.createDocumentFragment();
   const docFragementFinal = document.createDocumentFragment();
