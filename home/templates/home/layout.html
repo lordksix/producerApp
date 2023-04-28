@@ -1,7 +1,6 @@
 {% extends "home/base.html" %}
 {% block meta %}
 {% load static %}<link rel="stylesheet" type="text/css" href="{% static 'home/css/header.css' %}"/>
-{% load static %}<script src="{% static 'home/js/main.js'%}" type="module" defer></script>
 {% endblock %}
 
 {% block header %}
@@ -26,8 +25,8 @@
         <label for="menu_toggle" class="menu_hamburger"><img src="{% static 'general/img/Union.svg'%}" alt="Menu"></label>
         <ul class="menu">
           <li id="close_menu">X</li>
-          <li><a href="#about" class="active">About</a></li>
-          <li><a href="#events">Events</a></li>
+          <li><a href="#" class="active" id="about">About</a></li>
+          <li><a href="{% url 'tickets:index' %}" id="tickets">Events</a></li>
           <li><a href="#">Sponsor</a></li>
           <li><a href="#">News</a></li>
         </ul>
@@ -36,19 +35,11 @@
   </header>
 {% endblock %}
 
-{% block navbar %}
-
-{% endblock %}
-
 {% block body %}
-        {% block head %}{% endblock %}
-        {% block content %}{% endblock %}
-
-    {% block extra_body %}
-    {% endblock %}
-
+  {% block content0 %}{% endblock %}
+  {% block content1  %}{% endblock %}
+  {% block content2  %}{% endblock %}
 {% endblock %}
-
 {% block footer %}
 <footer>
     <div class="logo">

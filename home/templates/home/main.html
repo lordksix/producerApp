@@ -4,9 +4,10 @@
 {% endblock %}
 {% block extra_head %}
 {% load static %}<link rel="stylesheet" type="text/css" href="{% static 'home/css/main.css' %}"/>
+{% load static %}<script src="{% static 'home/js/main.js'%}" type="module" defer></script>
 {% endblock %}
-{% block content %}
-<main class="section modal-bg" id="about">
+{% block content1 %}
+<main class="section modal-bg" id="intro">
   <h1>Lorem ipsum dolor sit amet</h1>
   <div class="logo">
     <a href="{% url 'home:home' %}" class="logo"><span class="square big">My Logo</span><!-- {% load static %}<img src="{% static 'general/img/IMG-20230423-WA0032.jpg'%}"" alt="Escenario Productora Artistica"> --></a>
@@ -16,7 +17,7 @@
   </div>
 </main>
 <section class="section modal-bg" id="events">
-  <h1>Los eventos de la Lorem ipsumboo</h1>
+  <h2>Los eventos de la Lorem ipsumboo</h2>
   <div class="events-grid">
     {% load static %}<img class="event events-grid-col-2 events-grid-row-2" src="{% static 'general/img/IMG-20230423-WA0032.jpg'%}"" alt="Escenario Productora Artistica">
     {% load static %}<img src="{% static 'general/img/IMG-20230423-WA0032.jpg'%}"" alt="Escenario Productora Artistica">
@@ -24,7 +25,7 @@
     {% load static %}<img src="{% static 'general/img/IMG-20230423-WA0032.jpg'%}"" alt="Escenario Productora Artistica">
     {% load static %}<img src="{% static 'general/img/IMG-20230423-WA0032.jpg'%}"" alt="Escenario Productora Artistica">
   </div>
-  <a href="{% url 'tickets:tickets' %}" class="Join-more shadow">Póximos eventos</a>
+  <a href="{% url 'tickets:index' %}" class="Join-more shadow">Póximos eventos</a>
 </section>
 
 
