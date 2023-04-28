@@ -222,8 +222,7 @@ footer {
   box-shadow: -4px -4px 4px var(--box-shadow);
 }
 
-header .logo:hover,
-footer .logo:hover {
+.shadow:hover {
   box-shadow: 0 0 2px 2px var(--box-shadow);
   transition: box-shadow 0.3s ease-in-out;
 }

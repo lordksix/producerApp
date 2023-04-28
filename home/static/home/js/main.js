@@ -1,27 +1,19 @@
+import MenuModal from "./MenuModalModule.js";
+
 const menuBurger = document.querySelector('.menu_hamburger');
 const menuBlock = document.querySelector('.menu');
 const menuOptions = document.querySelectorAll('.menu li');
 const bodyNode = document.querySelector('body');
+const windowWidth = window.innerWidth;
+const menuLinks = document.querySelectorAll('.menu li a');
 
-function menuModal() {
-  menuBurger.computedStyleMap.display = 'none';
-  menuBlock.classList.add('menu_popup');
-  bodyNode.classList.add('modal-active');
-}
+console.log(menuBurger);
 
-function menuInteraction() {
-  menuBlock.classList.add('out');
-  menuBurger.computedStyleMap.display = 'block';
-  bodyNode.classList.remove('modal-active');
-  setTimeout(() => menuBlock.classList.remove('menu_popup', 'out'), 500);
-}
+const menuPopUp = () => MenuModal.menuPopUp(menuBurger, menuBlock, bodyNode);
+const menuPopOut = () => MenuModal.menuPopOut(menuBurger, menuBlock, bodyNode);
+const menuResize = () => MenuModal.menuModalResize(menuBlock, bodyNode, windowWidth);
 
-window.addEventListener('resize', () => {
-  if (window.innerWidth >= 768) {
-    menuBlock.classList.remove('menu_popup', 'out');
-    bodyNode.classList.remove('modal-active');
-  }
-});
+window.addEventListener('resize', menuResize);
 
-menuBurger.addEventListener('click', menuModal);
-menuOptions.forEach((option) => option.addEventListener('click', menuInteraction));
+menuBurger.addEventListener('click', menuPopUp);
+menuOptions.forEach((option) => option.addEventListener('click', menuPopOut));
