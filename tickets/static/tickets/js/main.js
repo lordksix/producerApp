@@ -8,10 +8,13 @@ const bodyNode = document.querySelector('body');
 const windowWidth = window.innerWidth;
 const menuLinks = document.querySelectorAll('.menu li a');
 
-console.log(menuBurger);
+const menuPop = () => menuPopUp(menuBurger, menuBlock, bodyNode);
+const menuVanish = () => menuPopOut(menuBurger, menuBlock, bodyNode);
+const menuResize = () => menuModalResize(menuBlock, bodyNode, windowWidth);
+const slider = () => sliderEvents('#slider-wrapper', 'next', 'prev', '.event-slide');
 
-window.addEventListener('load', sliderEvents('#slider-wrapper', 'next', 'prev', '.event-slide'))
-window.addEventListener('resize', menuModalResize(menuBlock, bodyNode, windowWidth));
+window.addEventListener('resize', menuResize);
+window.addEventListener('load', slider);
 
-menuBurger.addEventListener('click', menuPopUp(menuBurger, menuBlock, bodyNode));
-menuOptions.forEach((option) => option.addEventListener('click', menuPopOut(menuBurger, menuBlock, bodyNode)));
+menuBurger.addEventListener('click', menuPop);
+menuOptions.forEach((option) => option.addEventListener('click', menuVanish));

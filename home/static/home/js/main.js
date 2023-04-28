@@ -1,4 +1,4 @@
-import MenuModal from "./MenuModalModule.js";
+import { menuPopUp, menuPopOut, menuModalResize } from "./MenuModalModule.js";
 
 const menuBurger = document.querySelector('.menu_hamburger');
 const menuBlock = document.querySelector('.menu');
@@ -7,13 +7,11 @@ const bodyNode = document.querySelector('body');
 const windowWidth = window.innerWidth;
 const menuLinks = document.querySelectorAll('.menu li a');
 
-console.log(menuBurger);
-
-const menuPopUp = () => MenuModal.menuPopUp(menuBurger, menuBlock, bodyNode);
-const menuPopOut = () => MenuModal.menuPopOut(menuBurger, menuBlock, bodyNode);
-const menuResize = () => MenuModal.menuModalResize(menuBlock, bodyNode, windowWidth);
+const menuPop = () => menuPopUp(menuBurger, menuBlock, bodyNode);
+const menuVanish = () => menuPopOut(menuBurger, menuBlock, bodyNode);
+const menuResize = () => menuModalResize(menuBlock, bodyNode, windowWidth);
 
 window.addEventListener('resize', menuResize);
 
-menuBurger.addEventListener('click', menuPopUp);
-menuOptions.forEach((option) => option.addEventListener('click', menuPopOut));
+menuBurger.addEventListener('click', menuPop);
+menuOptions.forEach((option) => option.addEventListener('click', menuVanish));

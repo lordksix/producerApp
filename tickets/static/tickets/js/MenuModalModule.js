@@ -1,6 +1,5 @@
 const menuPopUp = (menuBurger, menuBlock, bodyNode, menuBurgerDisplay = 'none', 
   menuBlockClass = 'menu_popup', bodyNodeClass = 'modal-active') => {
-    console.log('popup');
   menuBurger.computedStyleMap.display = `${menuBurgerDisplay}`;
   menuBlock.classList.add(`${menuBlockClass}`);
   bodyNode.classList.add(`${bodyNodeClass}`);

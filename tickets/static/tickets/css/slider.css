@@ -46,6 +46,11 @@ li {
 	background-image: url(../../general/img/leaves05.jpg);
 }
 
+#slider-wrapper ul li a{
+	position: relative;
+	color: black;
+}
+
 .event-slide {
 	position: absolute;
 	top: 20px;
