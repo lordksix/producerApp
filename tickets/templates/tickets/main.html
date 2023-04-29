@@ -5,15 +5,16 @@
 {% block extra_head %}
 {% load static %}<link rel="stylesheet" type="text/css" href="{% static 'tickets/css/main.css' %}"/>
 {% load static %}<link rel="stylesheet" type="text/css" href="{% static 'tickets/css/slider.css' %}"/>
+{% load static %}<link rel="stylesheet" type="text/css" href="{% static 'tickets/css/eventGenerator.css' %}"/>
 {% load static %}<script src="{% static 'tickets/js/main.js'%}" type="module" defer></script>
 {% endblock %}
 {% block content0 %}
-<main class="section modal-bg" id="event-sec">
+<main class="section modal-bg" id="event-slider">
   <h1>Proximos eventos de la Lorem ipsumboo</h1>
   <div id="slider-wrapper">
     <ul>
-      <li data-eventID="0">
-        <div class="event-slide">
+      <li class="event-slide" data-eventID="0">
+        <div class="event-slide-text">
           <h2>Slide Event</h2>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing
@@ -22,8 +23,8 @@
           </p>
         </div>
       </li>
-      <li data-eventID="1">
-        <div class="event-slide">
+      <li class="event-slide" data-eventID="1">
+        <div class="event-slide-text">
           <h2>Slide Event</h2>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing
@@ -32,8 +33,8 @@
           </p>
         </div>
       </li>
-      <li data-eventID="2">
-        <div class="event-slide">
+      <li class="event-slide" data-eventID="2">
+        <div class="event-slide-text">
           <h2>Slide Event</h2>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing
@@ -42,8 +43,8 @@
           </p>
         </div>
       </li>
-      <li data-eventID="3">
-        <div class="event-slide">
+      <li class="event-slide" data-eventID="3">
+        <div class="event-slide-text">
           <h2>Slide Event</h2>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing
@@ -52,8 +53,8 @@
           </p>
         </div>
       </li>
-      <li data-eventID="4">
-        <div class="event-slide">
+      <li class="event-slide" data-eventID="4">
+        <div class="event-slide-text">
           <h2>Slide Event</h2>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing
@@ -70,10 +71,8 @@
   </div>
 </main>
 
-<section class="section modal-bg" id="event-sec">
-
+<section class="modal-bg" id="event-sec">
 </section>
-
 
 {% endblock %}
 
