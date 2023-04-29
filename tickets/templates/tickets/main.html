@@ -1,0 +1,78 @@
+{% extends "home/layout.html" %}
+{% block title %}
+    Welcome to EPA {{ settings.APP_NAME }}
+{% endblock %}
+{% block extra_head %}
+{% load static %}<link rel="stylesheet" type="text/css" href="{% static 'tickets/css/main.css' %}"/>
+{% load static %}<link rel="stylesheet" type="text/css" href="{% static 'tickets/css/slider.css' %}"/>
+{% load static %}<link rel="stylesheet" type="text/css" href="{% static 'tickets/css/eventGenerator.css' %}"/>
+{% load static %}<script src="{% static 'tickets/js/main.js'%}" type="module" defer></script>
+{% endblock %}
+{% block content0 %}
+<main class="section modal-bg" id="event-slider">
+  <h1>Proximos eventos de la Lorem ipsumboo</h1>
+  <div id="slider-wrapper">
+    <ul>
+      <li class="event-slide" data-eventID="0">
+        <div class="event-slide-text">
+          <h2>Slide Event</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing
+            elit. Eius modi et cumque quibusdam tempore earum
+            est, placeat facere non vero culpa inventore vitae!
+          </p>
+        </div>
+      </li>
+      <li class="event-slide" data-eventID="1">
+        <div class="event-slide-text">
+          <h2>Slide Event</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing
+            elit. Eius modi et cumque quibusdam tempore earum
+            est, placeat facere non vero culpa inventore vitae!
+          </p>
+        </div>
+      </li>
+      <li class="event-slide" data-eventID="2">
+        <div class="event-slide-text">
+          <h2>Slide Event</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing
+            elit. Eius modi et cumque quibusdam tempore earum
+            est, placeat facere non vero culpa inventore vitae!
+          </p>
+        </div>
+      </li>
+      <li class="event-slide" data-eventID="3">
+        <div class="event-slide-text">
+          <h2>Slide Event</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing
+            elit. Eius modi et cumque quibusdam tempore earum
+            est, placeat facere non vero culpa inventore vitae!
+          </p>
+        </div>
+      </li>
+      <li class="event-slide" data-eventID="4">
+        <div class="event-slide-text">
+          <h2>Slide Event</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing
+            elit. Eius modi et cumque quibusdam tempore earum
+            est, placeat facere non vero culpa inventore vitae!
+          </p>
+        </div>
+      </li>
+    </ul>
+    <div id="slider-controls">
+      <a href="#" id="prev">Previous</a>
+      <a href="#" id="next">Next</a>
+    </div>d
+  </div>
+</main>
+
+<section class="modal-bg" id="event-sec">
+</section>
+
+{% endblock %}
+

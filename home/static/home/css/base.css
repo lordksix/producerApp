@@ -1,0 +1,63 @@
+/* **** globals **** */
+
+:root {
+  --box-shadow: #00000056;
+  --font-descrip: #f8f8f8;
+  --font-1: #515151;
+  --font-2: #1e488f;
+  --font-active: #f07f7e;
+  --font-schedule: #ff5438;
+  --program-bg: #3b3e45c2;
+  --btn-more: #ff4f38;
+  --bg-sponsor: #414246;
+  --font-3: #344563;
+  --font-sponsor: #8f8f91;
+  --font-speaker-pos: #f78c89;
+  --font-contact-des: #ebebff;
+  --font-form-label: #7d7c84;
+  --bckgrd: #fff;
+  --bckgrd-0: #fff0;
+  --btn-color: #396df2;
+  --btn-active: #2230d2;
+  --border: #dfe1e6;
+  --body-bg: #eeecec;
+  --connect: #7f8cff;
+  --letter-bb: #fff;
+  --bg-contact: #5263ff;
+  --bg-menu: #000000e3;
+  --bg-modal: #c1c7d0be;
+  --font-error: #f00;
+  --form-valid: #0f0;
+  --font-heading1: #ff3c23;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.modal-active .modal-bg {
+  filter: blur(5px);
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  --top-nav: clamp(63px, (100vw - 440px) * 1000, min(9.8vw, 75px));
+  --top-header: calc(var(--top-nav) + 30px);
+
+  /* --top-header: clamp(var(--top-nav), (100vw - 768px) * 1000, calc(var(--top-nav) + 30px));*/
+  font-family: 'Lato', sans-serif;
+  display: flex;
+  flex-flow: column;
+  background-color: var(--body-bg);
+  margin-block-start: var(--top-header);
+  min-width: 100vh;
+}
