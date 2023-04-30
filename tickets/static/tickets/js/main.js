@@ -20,7 +20,11 @@ const eventSecRender = (e) => {
   eventSec.replaceChildren('');
   eventSec.appendChild(renderEvents(e, 'div', 'event'));
 };
-window.addEventListener('resize', menuResize);
+
+window.addEventListener('resize', () => {
+  menuResize();
+  slider();
+});
 window.addEventListener('load', slider);
 
 menuBurger.addEventListener('click', menuPop);

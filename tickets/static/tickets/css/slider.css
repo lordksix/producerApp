@@ -1,20 +1,26 @@
 #slider-wrapper {
-	width: 1000px;
-	height: 358px;
+	--slide-width: min(90vw, 1000px);
+	--slide-height: calc(var(--slide-width) / (10 / 3));
+	--slides: 5;
+	--slide-heading: clamp(12px, (320px - 100vw) * 1000, clamp(14px,(640px - 100vw) * 1000, clamp(17px,(1280px - 100vw) * 1000, 21px)));
+	--slide-descrip: calc(var(--slide-heading) * 0.8);
+	--slide-text-box: calc(var(--slide-width) / (10 / 3));
+	--slide-text-box-margin: calc(var(--slide-width) * 0.02);
+	--slider-control-font: clamp(10px, (320px - 100vw) * 1000, clamp(13px,(640px - 100vw) * 1000, clamp(16px,(1280px - 100vw) * 1000, 19px)));
+	--slider-control-padding:  clamp(calc(var(--slider-control-font) + 1px),(640px - 100vw) * 1000, calc(var(--slider-control-font) + 2px));
+	--slider-control-height: calc(var(--slider-control-font) + 2 * var(--slider-control-padding));
+	--slider-control-width: calc(var(--slide-width) * 0.2);
+	--slider-width: calc(var(--slide-width) * var(--slides));
+	--slider-height: calc(var(--slide-height) + var(--slider-control-height));
+	width: var(--slide-width);
+	height: var(--slider-height);
 	margin: auto;
 	position: relative;
 	overflow: hidden;
 }
 
-ul,
-li {
-	list-style-type: none;
-	margin: 0;
-	padding: 0;
-}
-
 #slider-wrapper ul {
-	width: 5000px;
+	width: var(--slide-width);
 	overflow: hidden;
 	position: absolute;
 	top: 0;
@@ -25,26 +31,26 @@ li {
 #slider-wrapper ul li {
 	background-size: cover;
 	position: relative;
-	width: 1000px;
-	height: 300px;
+	width: var(--slide-width);
+	height: var(--slide-height);
 	float: left;
 	cursor: pointer;
 }
 
 #slider-wrapper ul li:nth-child(1) {
-	background-image: url(../../general/img/leaves01.jpg);
+	background-image: url(../../tickets/img/leaves01-150x50.png);
 }
 #slider-wrapper ul li:nth-child(2) {
-	background-image: url(../../general/img/leaves02.jpg);
+	background-image: url(../../tickets/img/leaves02-150x50.png);
 }
 #slider-wrapper ul li:nth-child(3) {
-	background-image: url(../../general/img/leaves03.jpg);
+	background-image: url(../../tickets/img/leaves03-150x50.png);
 }
 #slider-wrapper ul li:nth-child(4) {
-	background-image: url(../../general/img/leaves04.jpg);
+	background-image: url(../../tickets/img/leaves04-150x50.png);
 }
 #slider-wrapper ul li:nth-child(5) {
-	background-image: url(../../general/img/leaves05.jpg);
+	background-image: url(../../tickets/img/leaves05-150x50.png);
 }
 
 #slider-wrapper ul li a{
@@ -54,11 +60,20 @@ li {
 
 .event-slide-text {
 	position: absolute;
-	top: 20px;
-	left: 20px;
-	width: 300px;
-	padding: 20px;
+	top: var(--slide-text-box-margin);
+	left: var(--slide-text-box-margin);
+	width: var(--slide-text-box);
+	padding: var(--slide-text-box-margin);
 	background-color: rgba(255, 255, 255, 0.7);
+}
+
+/* .event-slide-text h2 {
+	font-size: var(--slide-heading);
+} */
+
+.event-slide-text p {
+	display: none;
+	font-size: var(--slide-descrip);
 }
 
 #slider-controls {
@@ -73,12 +88,69 @@ li {
 
 #slider-controls a {
 	display: block;
-	padding: 20px;
+	padding: var(--slide-text-box-margin);
 	color: #fff;
 	font-weight: bold;
 	text-transform: uppercase;
 	text-decoration: none;
 	text-align: center;
-	width: 200px;
+	width: var(--slider-control-width);
 	background-color: #666;
+}
+
+@media only screen and (min-width: 320px) {
+	#slider-wrapper ul li:nth-child(1) {
+		background-image: url(../../tickets/img/leaves01-300x100.png);
+	}
+	#slider-wrapper ul li:nth-child(2) {
+		background-image: url(../../tickets/img/leaves02-300x100.png);
+	}
+	#slider-wrapper ul li:nth-child(3) {
+		background-image: url(../../tickets/img/leaves03-300x100.png);
+	}
+	#slider-wrapper ul li:nth-child(4) {
+		background-image: url(../../tickets/img/leaves04-300x100.png);
+	}
+	#slider-wrapper ul li:nth-child(5) {
+		background-image: url(../../tickets/img/leaves05-300x100.png);
+	}
+}
+
+@media only screen and (min-width: 640px) {
+	#slider-wrapper ul li:nth-child(1) {
+		background-image: url(../../tickets/img/leaves01-600x200.jpg.png);
+	}
+	#slider-wrapper ul li:nth-child(2) {
+		background-image: url(../../tickets/img/leaves02-600x200.jpg);
+	}
+	#slider-wrapper ul li:nth-child(3) {
+		background-image: url(../../tickets/img/leaves03-600x200.png);
+	}
+	#slider-wrapper ul li:nth-child(4) {
+		background-image: url(../../tickets/img/leaves04-600x200.png);
+	}
+	#slider-wrapper ul li:nth-child(5) {
+		background-image: url(../../tickets/img/leaves05-600x200.png);
+	}
+	.event-slide-text p {
+		display: block;
+	}
+}
+
+@media only screen and (min-width: 1280px) {
+	#slider-wrapper ul li:nth-child(1) {
+		background-image: url(../../tickets/img/leaves01.jpg);
+	}
+	#slider-wrapper ul li:nth-child(2) {
+		background-image: url(../../tickets/img/leaves02.jpg);
+	}
+	#slider-wrapper ul li:nth-child(3) {
+		background-image: url(../../tickets/img/leaves03.jpg);
+	}
+	#slider-wrapper ul li:nth-child(4) {
+		background-image: url(../../tickets/img/leaves04.jpg);
+	}
+	#slider-wrapper ul li:nth-child(5) {
+		background-image: url(../../tickets/img/leaves05.jpg);
+	}
 }

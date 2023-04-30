@@ -25,7 +25,7 @@ def index(request):
     return render(
         request,
         'tickets/main.html',
-        context={'num_books': num_events, 'num_instances': num_locations,
-                 'num_instances_available': num_instances_available, 'num_authors': num_seats,
+        context={'num_events': num_events, 'num_locations': num_locations,
+                 'num_instances_available': num_instances_available, 'num_seats': num_seats,
                  'num_visits': num_visits, 'events_list': events,'events_available_list': events_available,}, 
     )

@@ -7,11 +7,8 @@ export const renderEvents = (e, elem, classes) => {
   const posEvent = works[parseInt(e.target.dataset.eventid, 10)];
   const docFragDiv = document.createDocumentFragment();
   const docFragCard = document.createDocumentFragment();
-
-  const headingEvent = document.createElement('h2');
-  headingEvent.classList.add('event-post-card-title');
-  headingEvent.textContent = posEvent.name;
-  docFragCard.appendChild(headingEvent);
+  
+  docFragCard.appendChild(createElementDefault('h2', 'event-post-card-title', false, posEvent.name));
 
   const docFragUL = document.createDocumentFragment();
   posEvent.cat.forEach((catElem) => docFragUL.appendChild(createElementDefault('li', 'cat-descrip', false, catElem)))
