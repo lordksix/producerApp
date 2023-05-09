@@ -18,6 +18,7 @@
   background-color: var(--bckgrd);
   flex-flow: column;
   flex-grow: 0;
+  animation: scaleUpProject 0.3s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
 }
 
 .event-post-card {
@@ -57,13 +58,17 @@
 }
 
 .cat-descrip {
-  background: url(../images/Counter.svg) no-repeat;
-  background-position: left center;
+  background: url(../img/Counter.svg) no-repeat;
+  background-position: left 6px center;
+  background-color: var(--font-contact-des);
   font-weight: 600;
   color: var(--font-3);
   font-size: 13px;
   line-height: 123%;
   padding-left: 16px;
+  padding-right: 6px;
+  padding-block: 4px;
+  border-radius: 8px;
 }
 
 .event-post-card-descrip {
@@ -113,13 +118,13 @@
 @media only screen and (min-width: 375px) {
   .event-post-card {
     font-weight: 700;
-    font-size: 32px;
+    font-size: 20px;
     line-height: 133%;
     color: var(--font-1);
   }
 }
 
-@media only screen and (min-width: 840px) {
+@media only screen and (min-width: 1000px) {
   .event {
     padding: 24px;
     gap: 22px;
@@ -129,7 +134,7 @@
     background-color: var(--bckgrd);
     flex-flow: row;
     flex-grow: 0;
-    width: calc(100vw - 284px);
+    width: min(90vw, 1200px);
     box-shadow: 0 8px 16px var(--font-form-label);
   }
 
@@ -142,7 +147,7 @@
     width: calc(50%);
     padding: 24px;
     gap: clamp(24px, (1300px - 100vw) * 1000, 0px);
-    font-size: max(40px, 2.78vw);
+    font-size: 28px;
     line-height: 130%;
   }
 
