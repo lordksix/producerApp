@@ -14,7 +14,6 @@ def index(request):
     # Available events and seats
     events = Event.objects.all()
     events_available = Event.objects.filter(status__exact='a').all()
-    locations = Event.objects.filter(status__exact='a')
     num_instances_available = Event.objects.filter(status__exact='a').count() #number of events with available status
     num_seats = SeatInstance.objects.filter(status__exact='a').count()  # The 'all()' is implied by default.
     # Number of visits to this view, as counted in the session variable.
